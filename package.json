@@ -13,8 +13,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
     }
   },
   "config": {
@@ -25,6 +25,8 @@
   "devDependencies": {
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "^9.1.1",
+    "@types/react": "^16.9.43",
+    "@types/react-dom": "^16.9.8",
     "@typescript-eslint/eslint-plugin": "^3.7.0",
     "@typescript-eslint/parser": "^3.7.0",
     "commitizen": "^4.1.2",
@@ -32,8 +34,18 @@
     "eslint": "^7.5.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.3",
     "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
-    "stylelint-config-standard": "^20.0.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "stylelint": "^13.6.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^20.0.0",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2"
   }
 }
