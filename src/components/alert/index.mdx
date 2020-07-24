@@ -3,8 +3,9 @@ name: Alert 警告提示
 route: /Alert
 menu: 组件
 ---
-
-import { Playground } from 'docz'; import AlertDemo from './demo/basic'; // 引入组件
+import { ActionBox } from '../../doc-comps';
+import BasicDemo from './demo/basic';
+import BasicDemoCode from '!raw-loader!./demo/basic.tsx'; // 引入组件
 
 # Alert 警告提示
 
@@ -14,9 +15,9 @@ import { Playground } from 'docz'; import AlertDemo from './demo/basic'; // 引�
 
 ### 基本用法
 
-<Playground>
-  <AlertDemo />
-</Playground>
+<ActionBox code={BasicDemoCode} title="基本用法" desc="使用kind控制Alert类型">
+  <BasicDemo />
+</ActionBox>
 
 ## API
 

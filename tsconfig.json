@@ -1,6 +1,11 @@
 {
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "tubulang-ui": ["src/components/index.ts"],
+      "tubulang-ui/esm/*": ["src/components/*"],
+      "tubulang-ui/lib/*": ["src/components/*"]
+    },
     "target": "esnext",
     "module": "commonjs",
     "jsx": "react",
@@ -13,5 +18,5 @@
     "resolveJsonModule": true
   },
   "include": ["src", "global.d.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "src/**/__tests__"]
 }
