@@ -8,7 +8,7 @@
     "start": "npm run dev",
     "build:doc": "rimraf doc-site && docz build",
     "preview:doc": "docz serve",
-    "build:types": "tsc -p tsconfig.build.json && cpr lib esm",
+    "build:types": "tsc -p tsconfig.build.json && cp -r lib esm",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
@@ -16,6 +16,7 @@
     "release": "ts-node ./scripts/release.ts",
     "new": "plop --plopfile ./scripts/plopfile.ts"
   },
+  "typings": "lib/index.d.ts",
   "lint-staged": {
     "./src/**/*.{ts,tsx,js,json}": [
       "eslint --cache --fix",
@@ -31,7 +32,7 @@
       "pre-commit": "lint-staged"
     }
   },
-  "typings": "lib/index.d.ts",
+  
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"

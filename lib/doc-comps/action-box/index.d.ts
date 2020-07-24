@@ -6,6 +6,7 @@ interface Props {
     code: string;
     title?: React.ReactNode;
     desc?: React.ReactNode;
+    children?: React.ReactNode;
 }
-export declare const HappyBox: React.FC<Props>;
-export default HappyBox;
+export declare const ActionBox: React.FC<Props>;
+export default ActionBox;
