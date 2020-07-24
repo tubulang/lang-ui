@@ -18,8 +18,8 @@ require('prismjs/components/prism-jsx')
 
 interface Props {
   code: string
-  title?: React.ReactNode
-  desc?: React.ReactNode
+  title?: React.ReactNode | string
+  desc?: React.ReactNode | string
   children?: React.ReactNode
 }
 
@@ -80,8 +80,8 @@ export const ActionBox: React.FC<Props> = ({ code, title, desc, children }) => {
 
 ActionBox.propTypes = {
   code: PropTypes.string.isRequired,
-  title: PropTypes.element,
-  desc: PropTypes.element,
+  title: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  desc: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   children: PropTypes.element,
 }
 
