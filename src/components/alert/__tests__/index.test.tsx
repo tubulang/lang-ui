@@ -1,7 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import Alert from '../alert'
-import { Kind } from '../interface'
 
 describe('<Alert />', () => {
   test('should render default', () => {
@@ -10,7 +9,7 @@ describe('<Alert />', () => {
   })
 
   test('should render alert with type', () => {
-    const kinds: Kind[] = ['info', 'warning', 'positive', 'negative']
+    const kinds: any[] = ['info', 'warning', 'positive', 'negative']
 
     const { getByText } = render(
       <>

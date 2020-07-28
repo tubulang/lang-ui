@@ -3,9 +3,9 @@ import Editor from 'react-simple-code-editor'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import { useToggle } from 'react-use'
 import ReactTooltip from 'react-tooltip'
-import IconCopy from 'react-feather/dist/icons/clipboard'
-import IconCode from 'react-feather/dist/icons/code'
-import { highlight, languages } from 'prismjs/components/prism-core'
+import { Copy, Code } from 'react-feather'
+
+import { highlight, languages } from 'prismjs'
 import { StyledContainer, StyledIconWrapper } from './style'
 
 import 'prismjs/components/prism-clike'
@@ -18,12 +18,12 @@ require('prismjs/components/prism-jsx')
 
 interface Props {
   code: string
-  title?: React.ReactNode
-  desc?: React.ReactNode
+  title?: React.ReactNode | string
+  desc?: React.ReactNode | string
   children?: React.ReactNode
 }
 
-export const HappyBox: React.FC<Props> = ({ code, title, desc, children }) => {
+export const ActionBox: React.FC<Props> = ({ code, title, desc, children }) => {
   const [isEditVisible, toggleEditVisible] = useToggle(false)
 
   return (
@@ -39,11 +39,11 @@ export const HappyBox: React.FC<Props> = ({ code, title, desc, children }) => {
         <div className='divider' />
         <div className='code-box-action'>
           <CopyToClipboard text={code} onCopy={() => alert('复制成功')}>
-            <IconCopy data-place='top' data-tip='复制代码' />
+            <Copy data-place='top' data-tip='复制代码' />
           </CopyToClipboard>
 
           <StyledIconWrapper onClick={toggleEditVisible}>
-            <IconCode
+            <Code
               data-place='top'
               data-tip={isEditVisible ? '收起代码' : '显示代码'}
             />
@@ -65,7 +65,7 @@ export const HappyBox: React.FC<Props> = ({ code, title, desc, children }) => {
           onValueChange={(value) => {
             console.log(value)
           }}
-          highlight={(code) => highlight(code, languages.jsx)}
+          highlight={(code) => highlight(code, languages.jsx, 'typescript')}
           padding={10}
           className='container__editor'
           style={{
@@ -78,11 +78,11 @@ export const HappyBox: React.FC<Props> = ({ code, title, desc, children }) => {
   }
 }
 
-HappyBox.propTypes = {
+ActionBox.propTypes = {
   code: PropTypes.string.isRequired,
-  title: PropTypes.element,
-  desc: PropTypes.element,
+  title: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  desc: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   children: PropTypes.element,
 }
 
-export default HappyBox
+export default ActionBox

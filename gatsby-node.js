@@ -10,5 +10,22 @@ exports.onCreateWebpackConfig = (args) => {
         'tubulang-ui': path.resolve(__dirname, '../src/components/'),
       },
     },
+    module: {
+      rules: [
+        {
+          test: /\.less$/,
+          use: [
+            {
+              loader: 'less-loader',
+              options: {
+                lessOptions: {
+                  javascriptEnabled: true,
+                },
+              },
+            },
+          ],
+        },
+      ],
+    },
   })
 }

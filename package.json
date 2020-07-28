@@ -8,7 +8,7 @@
     "start": "npm run dev",
     "build:doc": "rimraf doc-site && docz build",
     "preview:doc": "docz serve",
-    "build:types": "tsc -p tsconfig.build.json && cpr lib esm",
+    "build:types": "tsc -p tsconfig.build.json && cp -r lib esm",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
@@ -16,6 +16,7 @@
     "release": "ts-node ./scripts/release.ts",
     "new": "plop --plopfile ./scripts/plopfile.ts"
   },
+  "typings": "lib/index.d.ts",
   "lint-staged": {
     "./src/**/*.{ts,tsx,js,json}": [
       "eslint --cache --fix",
@@ -31,23 +32,25 @@
       "pre-commit": "lint-staged"
     }
   },
-  "typings": "lib/index.d.ts",
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
   },
   "devDependencies": {
+    "@ant-design/colors": "^4.0.4",
     "@babel/core": "^7.10.5",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/plugin-transform-runtime": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
+    "@babel/runtime": "^7.10.5",
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "^9.1.1",
     "@testing-library/jest-dom": "^5.11.1",
     "@testing-library/react": "^10.4.7",
+    "@types/classnames": "^2.2.10",
     "@types/jest": "^26.0.5",
     "@types/prismjs": "^1.16.1",
     "@types/react": "^16.9.43",
@@ -87,10 +90,8 @@
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
     "ts-jest": "^26.1.3",
-    "typescript": "^3.9.7"
-  },
-  "dependencies": {
-    "@babel/runtime": "^7.10.5",
-    "prop-types": "^15.7.2"
+    "typescript": "^3.9.7",
+    "antd": "^4.4.3",
+    "classnames": "^2.2.6"
   }
 }

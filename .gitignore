@@ -4,3 +4,5 @@ yarn-error.log
 .eslintcache
 .stylelintcache
 .docz
+lib
+esm
