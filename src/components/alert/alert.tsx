@@ -1,29 +1,24 @@
 import React from 'react'
-import t from 'prop-types'
 
-import { KindMap, AlertProps } from './interface'
+import { AlertProps } from './interface'
+
+import classNames from 'classnames'
 
 const prefixCls = 'happy-alert'
-const kinds: KindMap = {
-  info: '#5352ED',
-  positive: '#2ED573',
-  negative: '#FF4757',
-  warning: '#FFA502',
-}
-const Alert: React.FC<AlertProps> = ({ children, kind = 'info', ...rest }) => (
-  <div
-    className={prefixCls}
-    style={{
-      background: kinds[kind],
-    }}
-    {...rest}
-  >
-    {children}
-  </div>
-)
 
-Alert.propTypes = {
-  kind: t.oneOf(['info', 'positive', 'negative', 'warning']),
+const Alert: React.FC<AlertProps> = ({
+  children,
+  kind = 'info',
+  className,
+  ...rest
+}) => {
+  const alertCls = classNames(prefixCls, `${prefixCls}-${kind}`, className)
+
+  return (
+    <div {...rest} className={alertCls}>
+      {children}
+    </div>
+  )
 }
 
 export default Alert

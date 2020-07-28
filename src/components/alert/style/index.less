@@ -1,8 +1,25 @@
+@import '../../style/index.less';
+
 @popupPrefix: happy-alert;
 
 .@{popupPrefix} {
   padding: 20px;
-  background: white;
   border-radius: 3px;
-  color: white;
+  color: rgba(0, 0, 0, 0.65);
+
+  &&-positive {
+    background-color: @green-6;
+  }
+
+  &&-info {
+    background-color: @blue-6;
+  }
+
+  &&-negative {
+    background-color: @red-5;
+  }
+
+  &&-warning {
+    background-color: @gold-6;
+  }
 }

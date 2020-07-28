@@ -1,6 +1,5 @@
 import React, { useState, ChangeEvent, FC, useEffect } from 'react'
 import { InputNumberProps, NumberVal } from './interface'
-import PropTypes from 'prop-types'
 import _ from 'lodash'
 import { processValue } from './utils'
 
@@ -62,12 +61,6 @@ const InputNumber: FC<InputNumberProps> = (props) => {
       onBlur={endChange}
     />
   )
-}
-
-InputNumber.propTypes = {
-  defaultValue: PropTypes.number,
-  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  onChange: PropTypes.func,
 }
 
 export default InputNumber
