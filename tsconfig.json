@@ -8,7 +8,7 @@
     },
     "target": "esnext",
     "module": "commonjs",
-    "jsx": "react",
+
     "declaration": true,
     "declarationDir": "lib",
     "strict": true,
@@ -16,8 +16,19 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "suppressImplicitAnyIndexErrors":true,
+
+    "strictNullChecks": true,
+    "experimentalDecorators": true,
+    "jsx": "preserve",
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "noImplicitAny": true,
+
+    "lib": ["dom", "es2017"],
+
   },
-  "include": ["src", "global.d.ts"],
+
   "exclude": ["node_modules", "src/**/__tests__"]
 }
