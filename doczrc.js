@@ -3,5 +3,5 @@ export default {
   dest: 'docs', // 打包出来的文件目录名
   title: 'tubulang-ui', // 站点标题
   typescript: true, // 组件源文件是通过typescript开发，需要打开此选项
-  base: '/lang-ui',
+  base: '/lang-ui', // github page
 }
