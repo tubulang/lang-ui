@@ -1,5 +1,5 @@
 import OriginalModal from './modal'
-import staticRender from './static_render'
+// import staticRender from './static_render'
 import { ModalProps } from './interface'
 
 type StaticModalProps = typeof OriginalModal & {
@@ -9,7 +9,7 @@ type StaticModalProps = typeof OriginalModal & {
 const Modal = OriginalModal as StaticModalProps
 
 // todo createPortal不能脱离组件
-Modal.render = staticRender
+// Modal.render = staticRender
 
 export * from './interface'
 

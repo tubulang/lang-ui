@@ -1,48 +1,55 @@
-import React, { FC } from 'react'
-import { ModalProps } from './interface'
-import ReactDOM from 'react-dom'
+import React, { FC, useEffect, useRef } from 'react'
+import { ModalProps, defaultProps } from './interface'
 import ClassNames from 'classnames'
+import Portal from '../portal'
+import { ModalContainer } from '../container'
 
 const prefixCls = 'tubulang-modal'
 
 const Modal: FC<ModalProps> = (props) => {
-  console.log(props, 'hhh')
+  const { visible, onHide, className, size, ...rest } = props
+
+  const modalRef = useRef<HTMLElement>()
+  const ModalContainerIns = new ModalContainer()
+
+  useEffect(() => {
+    modalRef.current = ModalContainerIns.create()
+
+    return () => ModalContainerIns.destroy()
+  }, [])
+
+  const handleHide = () => {
+    onHide && onHide()
+  }
+
   return (
-    <>
-      <div className={ClassNames(`${prefixCls}-mask`, {})} />
+    <Portal node={modalRef.current}>
       <div
-        {...props}
-        style={{
-          display: 'flex',
-          position: 'fixed',
-          justifyContent: 'center',
-          alignItems: 'center',
-          zIndex: 900,
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-        }}
+        {...rest}
+        className={ClassNames(`${prefixCls}-root`, className, {
+          [`${prefixCls}-root-hidden`]: !visible,
+        })}
       >
-        {props.children}
+        <div className={ClassNames(`${prefixCls}-mask`)} />
+        <div
+          className={ClassNames(`${prefixCls}-wrap`)}
+          role='dialog'
+          onClick={handleHide}
+        >
+          <div
+            className={ClassNames(`${prefixCls} ${prefixCls}-${size}`)}
+            onClick={(e) => {
+              e.stopPropagation()
+            }}
+          >
+            {props.children}
+          </div>
+        </div>
       </div>
-    </>
+    </Portal>
   )
 }
 
-const modalRender: FC<ModalProps> = (props) => {
-  const modalRef = document.createElement('div')
-  modalRef.className = prefixCls
-  const body = document.querySelector('body')
+Modal.defaultProps = defaultProps
 
-  body?.appendChild(modalRef)
-
-  return ReactDOM.createPortal(<Modal {...props} />, modalRef)
-}
-
-const ModalParent: FC<ModalProps> = (props) => {
-  return modalRender(props)
-}
-
-export default ModalParent
-export { Modal, modalRender, ModalParent }
+export default Modal

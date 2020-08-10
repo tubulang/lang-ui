@@ -1,19 +1,17 @@
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
 import { Modal } from 'tubulang-ui'
+import 'tubulang-ui/lib/modal/style'
 
 const Demo: React.FC = () => {
-  useEffect(() => {
-    Modal.render({ children: <div>this is render</div> })
-  }, [])
+  const [visible, setVisible] = useState(false)
   return (
-    <>
-      <Modal>
+    <div>
+      <Modal visible={visible} onHide={() => setVisible(false)}>
         <div>hello</div>
+        <button onClick={() => setVisible(false)}>hide modal</button>
       </Modal>
-      <Modal>
-        <div>hello999</div>
-      </Modal>
-    </>
+      <button onClick={() => setVisible(true)}>show modal</button>
+    </div>
   )
 }
 

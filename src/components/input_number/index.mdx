@@ -6,8 +6,10 @@ menu: 组件
 
 import ActionBox from '../../doc-comps/action-box';
 
-import BasicDemo from './demo/basic';
-import BasicDemoCode from '!raw-loader!./demo/basic';
+import ControlDemo from './demo/control';
+import ControlDemoCode from '!raw-loader!./demo/control';
+import UnControlDemo from './demo/un_control';
+import UnControlDemoCode from '!raw-loader!./demo/un_control';
 
 # InputNumber 数字输入框
 
@@ -15,10 +17,16 @@ import BasicDemoCode from '!raw-loader!./demo/basic';
 
 ## 代码演示
 
-#### 基本使用
+#### 受控
 
-<ActionBox code={BasicDemoCode} title="" desc="">
-  <BasicDemo></BasicDemo>
+<ActionBox code={ControlDemoCode} title="" desc="">
+  <ControlDemo></ControlDemo>
+</ActionBox>
+
+#### 非受控
+
+<ActionBox code={UnControlDemoCode} title="" desc="">
+  <UnControlDemo></UnControlDemo>
 </ActionBox>
 
 

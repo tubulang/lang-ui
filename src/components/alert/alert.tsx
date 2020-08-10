@@ -1,14 +1,12 @@
 import React from 'react'
-
-import { AlertProps } from './interface'
-
+import { AlertProps, defaultProps } from './interface'
 import classNames from 'classnames'
 
-const prefixCls = 'happy-alert'
+const prefixCls = 'tubulang-alert'
 
 const Alert: React.FC<AlertProps> = ({
   children,
-  kind = 'info',
+  kind,
   className,
   ...rest
 }) => {
@@ -20,5 +18,7 @@ const Alert: React.FC<AlertProps> = ({
     </div>
   )
 }
+
+Alert.defaultProps = defaultProps
 
 export default Alert
