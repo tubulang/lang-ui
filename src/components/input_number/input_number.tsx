@@ -5,8 +5,12 @@ import { processValue } from './utils'
 
 const InputNumber: FC<InputNumberProps> = (props) => {
   const { defaultValue, value, onChange, ...rest } = props
-  const [val, setVal] = useState<NumberVal>('')
   const _isControlled = _.isNil(defaultValue)
+  const [val, setVal] = useState<NumberVal>('')
+
+  useEffect(() => {
+    !_isControlled && setVal(defaultValue as NumberVal)
+  }, [])
 
   useEffect(() => {
     value !== undefined && setVal(value)

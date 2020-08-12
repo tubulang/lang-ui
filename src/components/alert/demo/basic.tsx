@@ -5,6 +5,8 @@ import 'tubulang-ui/lib/alert/style'
 const Demo: React.FC = () => {
   return (
     <>
+      <Alert>默认</Alert>
+      <br />
       <Alert kind='warning'>这是一条警告提示!</Alert>
       <br />
       <Alert kind='info'>这是一条提示提示!</Alert>

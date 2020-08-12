@@ -1,25 +1,25 @@
 @import '../../style/index.less';
 
-@popupPrefix: happy-alert;
+@popupPrefix: tubulang-alert;
 
 .@{popupPrefix} {
   padding: 20px;
   border-radius: 3px;
   color: rgba(0, 0, 0, 0.65);
 
-  &&-positive {
-    background-color: @green-6;
+  &-positive {
+    background-color: @alert-success-bg-color;
   }
 
-  &&-info {
-    background-color: @blue-6;
+  &-info {
+    background-color: @alert-info-bg-color;
   }
 
-  &&-negative {
-    background-color: @red-5;
+  &-negative {
+    background-color: @alert-error-bg-color;
   }
 
-  &&-warning {
-    background-color: @gold-6;
+  &-warning {
+    background-color: @alert-warning-bg-color;
   }
 }

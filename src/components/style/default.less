@@ -1,2 +1,62 @@
 // 使用antd的样式
 @import "~antd/lib/style/themes/default.less";
+
+/** ------------------------ basic ----------------------------  */
+
+// basic colors
+@primary-color: @blue-6;
+@info-color: @primary-color;
+@success-color: @green-6;
+@processing-color: @blue-6;
+@error-color: @red-5;
+@highlight-color: @red-5;
+@warning-color: @gold-6;
+@normal-color: #d9d9d9;
+@white: #fff;
+@black: #000;
+
+// height
+@height-base: 32px;
+@height-lg: 40px;
+@height-sm: 24px;
+
+// z-index list, order by `z-index`
+@zindex-badge: auto;
+@zindex-table-fixed: auto;
+@zindex-affix: 10;
+@zindex-back-top: 10;
+@zindex-picker-panel: 10;
+@zindex-popup-close: 10;
+@zindex-modal: 1000;
+@zindex-modal-mask: 1000;
+@zindex-message: 1010;
+@zindex-notification: 1010;
+@zindex-popover: 1030;
+@zindex-dropdown: 1050;
+@zindex-picker: 1050;
+@zindex-popoconfirm: 1060;
+@zindex-tooltip: 1070;
+
+
+/** ------------------------ components ----------------------------  */
+
+// Alert
+@alert-success-bg-color: @success-color;
+@alert-info-bg-color: @info-color;
+@alert-error-bg-color: @error-color;
+@alert-warning-bg-color: @warning-color;
+
+// Input
+@input-height-base: @height-base;
+@input-height-lg: @height-lg;
+@input-height-sm: @height-sm;
+
+// Modal
+@modal-mask-bg: fade(@black, 45%);
+@modal-bg: @white;
+@modal-size-width-default: 500px;
+@modal-size-width-lg: 700px;
+@modal-size-width-sm: 300px;
+@modal-size-height-default: 400px;
+@modal-size-height-lg: 500px;
+@modal-size-height-sm: 200px;

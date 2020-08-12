@@ -1,0 +1,49 @@
+@import '../../style/index.less';
+
+@popupPrefix: tubulang-modal;
+
+.@{popupPrefix}-root {
+  &-hidden {
+    display: none;
+  }
+
+  .@{popupPrefix}-wrap {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    z-index: @zindex-modal;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .@{popupPrefix}-mask {
+    z-index: @zindex-modal-mask;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: @modal-mask-bg;
+    height: 100%;
+  }
+
+  .@{popupPrefix} {
+    background-color: @modal-bg;
+
+    &.@{popupPrefix}-default{
+      width: @modal-size-width-default;
+      height: @modal-size-height-default;
+    }
+    &.@{popupPrefix}-lg{
+      width: @modal-size-width-lg;
+      height: @modal-size-height-lg;
+    }
+    &.@{popupPrefix}-sm{
+      width: @modal-size-width-sm;
+      height: @modal-size-height-sm;
+    }
+  }
+}
