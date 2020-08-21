@@ -1,13 +1,13 @@
 @import '../../style/index.less';
 
-@popupPrefix: tubulang-modal;
+@modalPrefix: tubulang-modal;
 
-.@{popupPrefix}-root {
+.@{modalPrefix}-root {
   &-hidden {
     display: none;
   }
 
-  .@{popupPrefix}-wrap {
+  .@{modalPrefix}-wrap {
     display: flex;
     position: fixed;
     justify-content: center;
@@ -19,7 +19,7 @@
     bottom: 0;
   }
 
-  .@{popupPrefix}-mask {
+  .@{modalPrefix}-mask {
     z-index: @zindex-modal-mask;
     position: fixed;
     top: 0;
@@ -30,18 +30,18 @@
     height: 100%;
   }
 
-  .@{popupPrefix} {
+  .@{modalPrefix} {
     background-color: @modal-bg;
 
-    &.@{popupPrefix}-default{
+    &.@{modalPrefix}-default{
       width: @modal-size-width-default;
       height: @modal-size-height-default;
     }
-    &.@{popupPrefix}-lg{
+    &.@{modalPrefix}-lg{
       width: @modal-size-width-lg;
       height: @modal-size-height-lg;
     }
-    &.@{popupPrefix}-sm{
+    &.@{modalPrefix}-sm{
       width: @modal-size-width-sm;
       height: @modal-size-height-sm;
     }
