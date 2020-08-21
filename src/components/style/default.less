@@ -37,6 +37,13 @@
 @zindex-popoconfirm: 1060;
 @zindex-tooltip: 1070;
 
+// border
+@border-color-base: hsv(0, 0, 85%); // base border outline a component
+@border-color-split: hsv(0, 0, 94%); // split border inside a component
+@border-color-inverse: @white;
+@border-width-base: 1px; // width of the border for a component
+@border-style-base: solid; // style of a components border
+
 
 /** ------------------------ components ----------------------------  */
 
@@ -60,3 +67,11 @@
 @modal-size-height-default: 400px;
 @modal-size-height-lg: 500px;
 @modal-size-height-sm: 200px;
+
+// Button
+@button-size-height-default: 32px;
+@button-size-height-lg: 40px;
+@button-size-height-sm: 24px;
+// @button-border-color: @primary-color;
+@button-bg-color: @white;
+@button-default-border-color: @border-color-base;

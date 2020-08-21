@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Modal } from 'tubulang-ui'
+import { Modal, Button } from 'tubulang-ui'
 import 'tubulang-ui/lib/modal/style'
 
 const Demo: React.FC = () => {
@@ -8,9 +8,9 @@ const Demo: React.FC = () => {
     <div>
       <Modal visible={visible} onHide={() => setVisible(false)}>
         <div>hello</div>
-        <button onClick={() => setVisible(false)}>hide modal</button>
+        <Button onClick={() => setVisible(false)}>hide modal</Button>
       </Modal>
-      <button onClick={() => setVisible(true)}>show modal</button>
+      <Button onClick={() => setVisible(true)}>show modal</Button>
     </div>
   )
 }
