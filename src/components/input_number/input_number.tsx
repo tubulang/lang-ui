@@ -2,6 +2,8 @@ import React, { useState, ChangeEvent, FC, useEffect } from 'react'
 import { InputNumberProps, NumberVal } from './interface'
 import _ from 'lodash'
 import { processValue } from './utils'
+import Input from '../input'
+import '../input/style'
 
 const InputNumber: FC<InputNumberProps> = (props) => {
   const { defaultValue, value, onChange, ...rest } = props
@@ -57,7 +59,7 @@ const InputNumber: FC<InputNumberProps> = (props) => {
   }
 
   return (
-    <input
+    <Input
       {...rest}
       value={getDisplayValue(val)}
       type='text'

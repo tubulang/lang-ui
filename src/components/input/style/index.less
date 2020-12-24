@@ -1,0 +1,17 @@
+@import '../../style/index.less';
+
+@inputPrefix: tubulang-input;
+
+.@{inputPrefix} {
+  padding: 5px 7px;
+  height: 20px;
+  border: 1px solid @border-color-base;
+  border-radius: 2px;
+  outline: 0;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: @primary-color;
+  }
+}

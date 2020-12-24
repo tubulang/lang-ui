@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes } from "react"
+import { ButtonHTMLAttributes } from 'react'
 
 export type ButtonType = 'default' | 'primary' | 'text' | 'link'
 export type ButtonSize = 'default' | 'sm' | 'lg'

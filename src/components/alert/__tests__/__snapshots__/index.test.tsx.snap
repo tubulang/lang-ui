@@ -2,7 +2,7 @@
 
 exports[`<Alert /> should render alert with type 1`] = `
 <div
-  class="happy-alert happy-alert-info"
+  class="tubulang-alert tubulang-alert-info"
 >
   info
 </div>
@@ -10,7 +10,7 @@ exports[`<Alert /> should render alert with type 1`] = `
 
 exports[`<Alert /> should render alert with type 2`] = `
 <div
-  class="happy-alert happy-alert-warning"
+  class="tubulang-alert tubulang-alert-warning"
 >
   warning
 </div>
@@ -18,7 +18,7 @@ exports[`<Alert /> should render alert with type 2`] = `
 
 exports[`<Alert /> should render alert with type 3`] = `
 <div
-  class="happy-alert happy-alert-positive"
+  class="tubulang-alert tubulang-alert-positive"
 >
   positive
 </div>
@@ -26,7 +26,7 @@ exports[`<Alert /> should render alert with type 3`] = `
 
 exports[`<Alert /> should render alert with type 4`] = `
 <div
-  class="happy-alert happy-alert-negative"
+  class="tubulang-alert tubulang-alert-negative"
 >
   negative
 </div>
@@ -35,7 +35,7 @@ exports[`<Alert /> should render alert with type 4`] = `
 exports[`<Alert /> should render default 1`] = `
 <div>
   <div
-    class="happy-alert happy-alert-info"
+    class="tubulang-alert tubulang-alert-info"
   >
     default
   </div>
