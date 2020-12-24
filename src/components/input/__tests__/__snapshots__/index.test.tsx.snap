@@ -1,11 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`InputNumber renders without error 1`] = `
+exports[`Input renders without error 1`] = `
 <div>
   <input
     class="tubulang-input"
-    type="text"
-    value="4"
   />
 </div>
 `;
